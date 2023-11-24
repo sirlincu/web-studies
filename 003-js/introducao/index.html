@@ -10,14 +10,12 @@
     <h1>Introdução ao JavaScript</h1>
     
     <script>
-        document.write("Hello world!")
-        console.log("Hello world!")
-        
-        document.getElementById("data").innerHTML = new Date()
 
         function carregarDados() {
             const nome = document.formDados.nome.value;
             const user = document.getElementById("user").value;
+
+
             const idade = document.formDados.idade.value;
         
             console.log(nome);
@@ -49,17 +47,23 @@
     <div id="data"></div>
 
     <form action="#" method="get" name="formDados">
+        
         <input type="text" name="nome" id="user">
 
         <input type="text" name="idade" id="age">
 
-        <button type="button" onclick="carregarDados()">
-            Carregar estados
+        <input type="button" value="Carregar" onclick="carregarDados()">
+
+        <button type="button" id="exibirNome">
+            Exibir nome
         </button>
         
     </form>
     
-    <script src="api.js"></script>
+    <script>
+        const button = document.getElementById("exibirNome")
+        button.addEventListener("click", carregarDados);
+    </script>
 
 </body>
 </html>
